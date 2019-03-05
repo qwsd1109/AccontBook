@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tabs>
+        <tab
+            id="@+id/tab_home"
+            icon="@drawable/ic_home_black_24dp"
+            barColorWhenSelected = "#F2B134 " />
+        <tab
+            id="@+id/tab_pay"
+            icon="@drawable/card"
+            barColorWhenSelected = "#47AB6C "/>
+        <tab
+            id="@+id/tab_saving"
+            icon="@drawable/bank"
+            barColorWhenSelected = "#0894A1 "/>
+    </tabs>
+</PreferenceScreen>
