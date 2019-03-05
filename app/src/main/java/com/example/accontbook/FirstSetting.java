@@ -40,8 +40,8 @@ public class FirstSetting extends AppCompatActivity {
 
                             if ( ed_day.getText().toString().length() == 0 ) {
                                 tv_day_err.setText("날짜를 입력해주세요");
-                            }else if(Integer.parseInt(ed_day.getText().toString())>31){
-                                tv_day_err.setText("유효한 날짜를 입력해주세요");
+                            }else if(Integer.parseInt(ed_day.getText().toString())>29){
+                                tv_day_err.setText("1~28일 사이의 날짜 를 입력해주세요");
                             }else{
                                 SharedPreferences pref = getSharedPreferences("setting", MODE_PRIVATE);
                                 SharedPreferences.Editor editor = pref.edit();
