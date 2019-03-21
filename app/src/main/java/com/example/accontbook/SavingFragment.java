@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -29,23 +31,45 @@ public class SavingFragment extends Fragment {
         final EditText ed_com = (EditText)view.findViewById(R.id.ed_con) ;
         final TextView tv_won_err=(TextView)view.findViewById(R.id.tv_won__err);
 
+        final Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.sh);
 
         ed_com.addTextChangedListener(new CustomTextWathcer(ed_com));
 
         final EditText purpose = (EditText)view.findViewById(R.id.purpose);
         final TextView purpose_err = (TextView)view.findViewById(R.id.purpose_err);
-        int color = Color.parseColor("#0894A1");
+        final int color = Color.parseColor("#0894A1");
+        final int pcolor = Color.parseColor("#ff0000");
         ed_com.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         purpose.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         view.findViewById(R.id.button).setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         if ( purpose.getText().toString().length() == 0 ) {
+                            tv_won_err.setText("");
+                            purpose_err.setText("");
                             purpose_err.setText("목적을 입력해주세요");
+
+                            purpose.getBackground().setColorFilter(pcolor, PorterDuff.Mode.SRC_ATOP);
+                            purpose.getBackground().setColorFilter(pcolor, PorterDuff.Mode.SRC_ATOP);
+                            purpose.startAnimation(animation);
+                            purpose.invalidate();
                         }else {
                             if ( ed_com.getText().toString().length() == 0 ) {
+                                tv_won_err.setText("");
+                                purpose_err.setText("");
                                 tv_won_err.setText("금액을 입력해주세요");
+
+
+                                purpose.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+                                ed_com.getBackground().setColorFilter(pcolor, PorterDuff.Mode.SRC_ATOP);
+                                ed_com.getBackground().setColorFilter(pcolor, PorterDuff.Mode.SRC_ATOP);
+                                ed_com.startAnimation(animation);
+                                ed_com.invalidate();
                             }else {
+                                purpose.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+                                ed_com.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
+                                tv_won_err.setText("");
+                                purpose_err.setText("");
                                 String text =purpose.getText().toString();
                                 String num =ed_com.getText().toString();
                                 String it = "수입";

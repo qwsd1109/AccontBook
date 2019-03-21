@@ -8,13 +8,13 @@
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:layout_height="364dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
         app:cardCornerRadius="@dimen/default_stroke_size"
         app:cardElevation="20dp"
         app:cardPreventCornerOverlap="true"
@@ -84,7 +84,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="395dp"
+        android:layout_width="match_parent"
         android:layout_height="220dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"

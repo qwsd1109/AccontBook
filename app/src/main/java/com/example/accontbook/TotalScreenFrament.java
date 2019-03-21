@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Canvas;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,6 +104,17 @@ public class TotalScreenFrament extends Fragment {
         recyclerView.addItemDecoration(decoration);
         recyclerView.setAdapter(myAdapter);
 
+
+//        swipeController  = new SwipeController(new SwipeControllerActions() {
+//            @Override
+//            public void onRightClicked(int position) {
+//                myAdapter.mDataset.remove(position);
+//                myAdapter.notifyItemRemoved(position);
+//                myAdapter.notifyItemChanged(position, myAdapter.getItemCount());
+//            }
+//        });
+
+
 //
 //        myDataset = new ArrayList<>();
 //        userAdapter = new MyAdapter(myDataset);
@@ -110,6 +123,7 @@ public class TotalScreenFrament extends Fragment {
 
         return view;
     }
+
     public  void loadDatabase(){
         sqLite = new SQLite(getActivity());
         sqLite.checkAndCopyData();
@@ -133,12 +147,16 @@ public class TotalScreenFrament extends Fragment {
             }
         }
     }
+
 }
 
 
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    private List<MyData> mDataset  = Collections.emptyList();
+    public List<MyData> mDataset  = Collections.emptyList();
     private Context context;
+
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView tv_it;
         public TextView tv_item;
