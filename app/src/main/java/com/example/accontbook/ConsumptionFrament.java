@@ -39,6 +39,7 @@ public class ConsumptionFrament extends Fragment {
         long now_1 = System.currentTimeMillis();
         Date date = new Date(now_1);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+        final Context context = container.getContext();
         final String getTime = sdf.format(date);
         final SQLite dbHelper = new SQLite(getContext().getApplicationContext());
         final EditText ed_com = (EditText)view.findViewById(R.id.ed_con) ;
@@ -108,6 +109,7 @@ public class ConsumptionFrament extends Fragment {
                                 purpose.setText("");
                                 tv_won_err.setText("");
                                 purpose_err.setText("");
+                                Toast.makeText(context,"입력이 완료되었습니다.",Toast.LENGTH_LONG).show();
                         }
                         }
                     }
