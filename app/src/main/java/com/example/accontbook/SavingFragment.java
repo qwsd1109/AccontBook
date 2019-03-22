@@ -43,8 +43,7 @@ public class SavingFragment extends Fragment {
         final int pcolor = Color.parseColor("#ff0000");
         ed_com.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         purpose.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-        view.findViewById(R.id.button);
-        view.setOnClickListener(
+        view.findViewById(R.id.sv_button).setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         if (purpose.getText().toString().length() == 0) {
@@ -81,7 +80,7 @@ public class SavingFragment extends Fragment {
                                 purpose.setText("");
                                 tv_won_err.setText("");
                                 purpose_err.setText("");
-                                Toast toast = Toast.makeText(context, "입력되었습니다.", Toast.LENGTH_LONG);
+                                Toast.makeText(context, "입력되었습니다.", Toast.LENGTH_LONG);
                             }
                         }
                     }

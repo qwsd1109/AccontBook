@@ -214,7 +214,6 @@ public class SQLite extends SQLiteOpenHelper {
         return val;
     }
     public void de(){
-        // 읽기가 가능하게 DB 열기
         SQLiteDatabase db = getReadableDatabase();
         db.execSQL("delete from MONEYBOOK" );
     }

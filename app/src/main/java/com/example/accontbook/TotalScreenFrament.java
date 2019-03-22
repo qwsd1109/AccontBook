@@ -48,14 +48,21 @@ public class TotalScreenFrament extends Fragment {
         FitChart fitChart = (FitChart) view.findViewById(R.id.Chart);
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
 
+
+
         long val;
         float fl_tot;
         long fl_tot_2;
         float fl_tot_3;
         float fl_num;
+        float d_num = 0;
+
+        String it = "수입";
+        String text = "지난달 남은 용돈";
         String num;
 
         final SQLite dbHelper = new SQLite(getContext().getApplicationContext());
+        final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
         //final SQLite_set db = new SQLite_set(getContext().getApplicationContext());
         fl_tot = Float.parseFloat(dbHelper.set_getResult().replace(",",""));        //월급
         val=dbHelper.con_getResult();                           //지출
@@ -74,16 +81,25 @@ public class TotalScreenFrament extends Fragment {
         Date data = new Date(now);
         SimpleDateFormat sdf = new SimpleDateFormat("dd");
         String getTime = sdf.format(data);
+        String Time = simpleDateFormat.format(data);
 
         SharedPreferences pref = getActivity().getSharedPreferences("setting", MODE_PRIVATE);
         if(pref.getString("key_day", "").equals("20")){
 
         }
         else if(Integer.parseInt(getTime) == dbHelper.setday_getResult()){
+            if(fl_num >0){
+                d_num = fl_num;
+            }
+
             dbHelper.de();
             SharedPreferences.Editor editor = pref.edit();
             editor.putString("key_day","20");
             editor.commit();
+            if(d_num  >0){
+                num = dc.format(d_num);
+                dbHelper.con_insert(Time, text, num, it);
+            }
 
         }
         if(Integer.parseInt(getTime) != dbHelper.setday_getResult()){

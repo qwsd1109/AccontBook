@@ -73,7 +73,7 @@ public class ConsumptionFrament extends Fragment {
         final int pcolor = Color.parseColor("#ff0000");
         ed_com.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
         purpose.getBackground().setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
-        view.findViewById(R.id.button).setOnClickListener(
+        view.findViewById(R.id.co_button).setOnClickListener(
                 new Button.OnClickListener() {
                     public void onClick(View v) {
                         if ( purpose.getText().toString().length() == 0 ) {
