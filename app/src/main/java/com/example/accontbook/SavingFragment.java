@@ -80,7 +80,7 @@ public class SavingFragment extends Fragment {
                                 purpose.setText("");
                                 tv_won_err.setText("");
                                 purpose_err.setText("");
-                                Toast.makeText(context, "입력되었습니다.", Toast.LENGTH_LONG);
+                                Toast.makeText(context,"입력이 완료되었습니다.",Toast.LENGTH_LONG).show();
                             }
                         }
                     }

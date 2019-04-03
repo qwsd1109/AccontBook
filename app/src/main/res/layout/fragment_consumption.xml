@@ -50,7 +50,6 @@
 
 
             <EditText
-                android:maxLength="10"
                 android:id="@+id/purpose"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -59,6 +58,7 @@
                 android:layout_marginTop="28dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:maxLength="10"
                 android:singleLine="true"
                 android:textCursorDrawable="@null"
                 android:textSize="30sp"
@@ -99,23 +99,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/purpose_err" />
 
             <EditText
-                android:maxLength="17"
                 android:id="@+id/ed_con"
                 android:layout_width="200dp"
                 android:layout_height="60dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:gravity="right"
+                android:maxLength="17"
                 android:numeric="integer"
                 android:singleLine="true"
                 android:textCursorDrawable="@null"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.364"
+                app:layout_constraintEnd_toStartOf="@+id/won"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/t_v" />
 
@@ -125,8 +122,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:numeric="integer"
                 android:text="원"
                 android:textColor="#000000"
@@ -134,7 +129,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/ed_con"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/ed_con"
                 app:layout_constraintTop_toTopOf="@+id/ed_con"
                 tools:ignore="Deprecated" />
